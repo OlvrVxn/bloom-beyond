@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard — Bloom & Beyond Flower Shop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚙</text></svg>">
+</head>
+<body class="admin-page">
+
+<!-- ADMIN HEADER -->
+<header id="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">🌸</div>
+      <div class="logo-text">
+        <h1>Bloom & Beyond</h1>
+        <span>Admin Panel</span>
+      </div>
+    </a>
+    <nav>
+      <a href="index.html" class="nav-link">← Back to Shop</a>
+      <button class="cart-btn" onclick="clearAllOrders()" title="Clear all orders">🗑 Clear All</button>
+    </nav>
+  </div>
+</header>
+
+<!-- ADMIN CONTENT -->
+<main class="admin-main">
+  <div class="admin-header-bar">
+    <div>
+      <div class="eyebrow">Business Overview</div>
+      <h2>Admin <em>Dashboard</em></h2>
+      <p class="admin-subtitle">Manage orders, track revenue, and update delivery status.</p>
+    </div>
+    <div class="admin-actions">
+      <button class="btn btn-outline" onclick="exportOrders()">📥 Export CSV</button>
+      <button class="btn btn-primary" onclick="loadSampleOrders()">✨ Load Sample Data</button>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-icon">📦</div>
+      <div class="num" id="statOrders">0</div>
+      <div class="label">Total Orders</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">💰</div>
+      <div class="num" id="statRevenue">P0</div>
+      <div class="label">Total Revenue</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">⏳</div>
+      <div class="num" id="statPending">0</div>
+      <div class="label">Pending</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">🚚</div>
+      <div class="num" id="statProcessing">0</div>
+      <div class="label">Processing</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">✅</div>
+      <div class="num" id="statDelivered">0</div>
+      <div class="label">Delivered</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">📊</div>
+      <div class="num" id="statAvg">P0</div>
+      <div class="label">Avg. Order</div>
+    </div>
+  </div>
+
+  <!-- FILTER -->
+  <div class="admin-filter-bar">
+    <input type="text" id="adminSearch" placeholder="🔍 Search by name, phone, or reference..." oninput="renderOrders()">
+    <select id="adminStatusFilter" onchange="renderOrders()">
+      <option value="all">All Status</option>
+      <option value="Pending">Pending</option>
+      <option value="Processing">Processing</option>
+      <option value="Delivered">Delivered</option>
+    </select>
+  </div>
+
+  <!-- ORDERS TABLE -->
+  <div class="admin-table-wrap">
+    <table class="orders-table">
+      <thead>
+        <tr>
+          <th>Ref</th>
+          <th>Customer</th>
+          <th>Items</th>
+          <th>Total</th>
+          <th>Delivery</th>
+          <th>Payment</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="ordersTableBody">
+        <tr><td colspan="8" class="empty-row">No orders yet — waiting for your first customer! 🌸</td></tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+
+<!-- ORDER DETAIL MODAL -->
+<div class="modal-overlay" id="detailModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeDetail()">×</button>
+    <div id="detailContent"></div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">Order updated</div>
+
+<script src="js/script.js"></script>
+<script>
+  // Admin page specific init
+  document.addEventListener('DOMContentLoaded', () => {
+    renderOrders();
+  });
+</script>
+</body>
+</html>

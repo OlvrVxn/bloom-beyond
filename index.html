@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bloom & Beyond Flower Shop — Making Every Moment Bloom</title>
+<meta name="description" content="Fresh, beautiful, and customized floral arrangements for all of life's special occasions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">🚚 Free Delivery on Orders Over P1,500 &nbsp;•&nbsp; 🌸 Fresh Flowers Daily &nbsp;•&nbsp; 💐 Same-Day Delivery Available</div>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <img src="images/logo.png" alt="Bloom & Beyond Flower Shop" class="logo-img">
+      <div class="logo-text">
+        <h1>Bloom & Beyond</h1>
+        <span>Flower Shop</span>
+      </div>
+    </a>
+    <nav>
+      <a href="#shop" class="nav-link active">Shop</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#testimonials" class="nav-link">Reviews</a>
+      <a href="admin.html" class="nav-link admin-link" title="Admin Dashboard">⚙</a>
+      <button class="cart-btn" onclick="openCart()">
+        🛒 Cart <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <span class="petal">🌸</span>
+  <span class="petal">🌷</span>
+  <span class="petal">🌹</span>
+  <span class="petal">🌺</span>
+  <span class="petal">💐</span>
+  <div class="hero-inner">
+    <div class="hero-tag">✦ Handcrafted with Love Since 2026 ✦</div>
+    <h2>Flowers that <em>Speak</em></h2>
+    <div class="hero-script">Making Every Moment Bloom</div>
+    <p>Fresh, beautiful, and customized floral arrangements for birthdays, anniversaries, weddings, graduations, and every moment worth celebrating.</p>
+    <div class="hero-buttons">
+      <a href="#shop" class="btn btn-primary">🌸 Shop Bouquets</a>
+      <a href="#services" class="btn btn-outline">Our Services →</a>
+    </div>
+    <div class="trust-bar">
+      <div class="trust-item"><div class="icon">🚚</div><div class="label">Same-Day Delivery</div></div>
+      <div class="trust-item"><div class="icon">🌿</div><div class="label">Fresh Daily</div></div>
+      <div class="trust-item"><div class="icon">💝</div><div class="label">Custom Designs</div></div>
+      <div class="trust-item"><div class="icon">⭐</div><div class="label">5-Star Service</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<section id="shop">
+  <div class="section-head reveal">
+    <div class="eyebrow">Our Collection</div>
+    <h3>Handcrafted <em>Bouquets</em></h3>
+    <div class="ornament"><span>❀</span></div>
+    <p>Each arrangement is thoughtfully designed to make your special moments unforgettable.</p>
+  </div>
+
+  <div class="filters reveal">
+    <button class="filter-btn active" onclick="filterProducts('all', this)">All Products</button>
+    <button class="filter-btn" onclick="filterProducts('bouquet', this)">Bouquets</button>
+    <button class="filter-btn" onclick="filterProducts('gift', this)">Gift Sets</button>
+    <button class="filter-btn" onclick="filterProducts('event', this)">Event Packages</button>
+  </div>
+
+  <div class="product-grid" id="productGrid"></div>
+</section>
+
+<!-- SERVICES -->
+<div class="services-section" id="services">
+  <div class="services-inner">
+    <div class="section-head reveal">
+      <div class="eyebrow">What We Offer</div>
+      <h3>Our <em>Services</em></h3>
+      <div class="ornament"><span>❀</span></div>
+      <p>More than just flowers — we create experiences and memories.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon-img">
+          <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=600&q=80" alt="Custom Bouquets">
+        </div>
+        <h4>Custom Bouquets</h4>
+        <p>Personalized arrangements based on your preferred flowers, colors, and design.</p>
+        <div class="service-price">P600 – P1,500</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon-img">
+          <img src="https://images.unsplash.com/photo-1607082349566-187342175e2f?w=600&q=80" alt="Flower Gift Sets">
+        </div>
+        <h4>Flower Gift Sets</h4>
+        <p>Flowers combined with chocolates, boxes, and customized gift baskets.</p>
+        <div class="service-price">P500 – P2,000</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon-img">
+          <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600&q=80" alt="Event Floral Decorations">
+        </div>
+        <h4>Event Floral Decorations</h4>
+        <p>Weddings, birthdays, store openings, graduations, and more.</p>
+        <div class="service-price">P5,000 – P30,000</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon-img">
+          <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=600&q=80" alt="Flower Delivery">
+        </div>
+        <h4>Flower Delivery</h4>
+        <p>Reliable delivery to homes, schools, offices, and event venues.</p>
+        <div class="service-price">P80 – P250</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="about-visual reveal">
+  <div class="about-frame about-frame-1">
+    <img src="https://images.unsplash.com/photo-1487530811176-3780de880c2d?w=800&q=80" alt="Fresh Flowers">
+  </div>
+  <div class="about-frame about-frame-2">
+    <img src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=800&q=80" alt="Florist at Work">
+  </div>
+  <div class="about-badge">
+    <div class="num">100%</div>
+    <div class="lbl">Fresh Flowers</div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="testimonials-section" id="testimonials">
+  <div class="testimonials-inner">
+    <div class="section-head reveal">
+      <div class="eyebrow">Happy Customers</div>
+      <h3>Loved by <em>Many</em></h3>
+      <div class="ornament"><span>❀</span></div>
+      <p>Here's what our customers have to say about their Bloom & Beyond experience.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>"The bouquet I ordered for my mom's birthday was absolutely stunning. She cried happy tears! The flowers were so fresh and beautifully arranged."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">MJ</div>
+          <div class="author-info">
+            <div class="name">Maria Josefa</div>
+            <div class="role">Birthday Order</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Bloom & Beyond did the flowers for our wedding and it was magical. Every arrangement was perfect and they delivered on time. Highly recommended!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">RC</div>
+          <div class="author-info">
+            <div class="name">Rica & Carlo</div>
+            <div class="role">Wedding Clients</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Fast delivery, beautiful flowers, and the customer service is amazing. My go-to flower shop for all occasions. The customized bouquet was perfect!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">AT</div>
+          <div class="author-info">
+            <div class="name">Andrea Torres</div>
+            <div class="role">Repeat Customer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NEWSLETTER -->
+<div class="newsletter">
+  <div class="newsletter-inner reveal">
+    <h3>Get <em>10% Off</em> Your First Order</h3>
+    <p>Subscribe to our newsletter for exclusive offers, seasonal arrangements, and floral inspiration.</p>
+    <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+      <input type="email" placeholder="Enter your email address" required>
+      <button type="submit" class="btn btn-primary">Subscribe</button>
+    </form>
+  </div>
+</div>
+
+<!-- CART MODAL -->
+<div class="modal-overlay" id="cartModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeCart()">×</button>
+
+    <div id="cartView">
+      <h3>Your Cart</h3>
+      <div class="modal-sub">Review your beautiful selections</div>
+      <div id="cartItems"></div>
+      <div class="cart-total" id="cartTotal" style="display:none;">
+        <span>Total</span>
+        <span id="totalAmount">P0</span>
+      </div>
+      <button class="btn btn-primary" style="width:100%; margin-top:20px; justify-content:center;" id="checkoutBtn" onclick="showCheckout()">Proceed to Checkout →</button>
+    </div>
+
+    <div id="checkoutView" style="display:none;">
+      <h3>Order Details</h3>
+      <div class="modal-sub">Fill in your delivery information</div>
+      <form id="checkoutForm" onsubmit="placeOrder(event)">
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" id="custName" required placeholder="Juan Dela Cruz">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Phone Number *</label>
+            <input type="tel" id="custPhone" required placeholder="09XX XXX XXXX">
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="custEmail" placeholder="juan@email.com">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Delivery Address *</label>
+          <textarea id="custAddress" required rows="2" placeholder="House/Unit, Street, Barangay, City"></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Preferred Delivery Date *</label>
+            <input type="date" id="custDate" required>
+          </div>
+          <div class="form-group">
+            <label>Payment Method *</label>
+            <select id="custPayment" required>
+              <option value="">Select...</option>
+              <option value="Cash on Delivery">Cash on Delivery</option>
+              <option value="GCash">GCash</option>
+              <option value="Bank Transfer">Bank Transfer</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Special Message / Instructions</label>
+          <textarea id="custMessage" rows="2" placeholder="e.g., Happy Birthday! Include a card message..."></textarea>
+        </div>
+        <div class="cart-total">
+          <span>Total</span>
+          <span id="checkoutTotal">P0</span>
+        </div>
+        <div style="display:flex; gap:10px; margin-top:20px;">
+          <button type="button" class="btn btn-outline" style="flex:1; justify-content:center;" onclick="backToCart()">← Back</button>
+          <button type="submit" class="btn btn-primary" style="flex:2; justify-content:center;">Place Order 🌸</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="confirmView" style="display:none;">
+      <div class="confirmation">
+        <span class="check">🌸</span>
+        <h3>Order Confirmed!</h3>
+        <p>Thank you for choosing Bloom & Beyond.</p>
+        <div class="order-ref" id="orderRef">BB-0000</div>
+        <p>We'll contact you shortly to confirm your order details.</p>
+        <button class="btn btn-primary" style="margin-top:20px; justify-content:center;" onclick="closeCart(); resetCart();">Continue Shopping</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">Added to cart!</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-brand">
+      <h4>Bloom & Beyond</h4>
+      <p>Making Every Moment Bloom through beautiful flowers, thoughtful designs, and reliable service. Your trusted flower shop for all of life's special occasions.</p>
+      <div class="social-icons">
+        <a href="#" class="social-icon" title="Facebook" aria-label="Facebook">f</a>
+        <a href="#" class="social-icon" title="Instagram" aria-label="Instagram">📷</a>
+        <a href="#" class="social-icon" title="TikTok" aria-label="TikTok">♪</a>
+        <a href="mailto:hello@bloomandbeyond.ph" class="social-icon" title="Email" aria-label="Email">✉</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="#shop">Shop Bouquets</a>
+      <a href="#services">Services</a>
+      <a href="#about">About Us</a>
+      <a href="#testimonials">Reviews</a>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="#services">Custom Bouquets</a>
+      <a href="#services">Flower Gift Sets</a>
+      <a href="#services">Event Decorations</a>
+      <a href="#services">Flower Delivery</a>
+    </div>
+    <div class="footer-col">
+      <h4>Visit Us</h4>
+      <p>📍 Commercial Area, Near Public Market</p>
+      <p>📞 0912 345 6789</p>
+      <p>✉ hello@bloomandbeyond.ph</p>
+      <p>🕐 Mon–Sat: 8AM – 7PM</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 Bloom & Beyond Flower Shop &nbsp;•&nbsp; Group 2 — Flower Shop Business Concept &nbsp;•&nbsp; All rights reserved.
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
